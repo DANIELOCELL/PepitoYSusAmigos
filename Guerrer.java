@@ -5,6 +5,6 @@ public class Guerrer extends Personatge {
 
     @Override
     public void atacar(Personatge oponent) {
-        oponent.atacarAmbMal(oponent, 20);
+        atacarAmbMal(oponent, 20);
     }
 }
