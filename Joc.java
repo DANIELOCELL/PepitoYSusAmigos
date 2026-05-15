@@ -4,7 +4,13 @@ public class Joc {
     public void executar() {
         combatents = new Combatents();
         crearEquips();
-        combatents.torn();
+        if (hiHanEquipsVius()) {
+            combatents.torn();
+        }
+    }
+
+    public boolean hiHanEquipsVius() {
+        return combatents.equipsAmbVius() > 0;
     }
 
     public void crearEquips() {

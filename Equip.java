@@ -20,4 +20,14 @@ public abstract class Equip {
     public ArrayList<Personatge> getPersonatges() {
         return new ArrayList<>(personatges);
     }
+
+    public int personatgesVius() {
+        int vius = 0;
+        for (Personatge p : personatges) {
+            if (p.esViu()) {
+                vius++;
+            }
+        }
+        return vius;
+    }
 }

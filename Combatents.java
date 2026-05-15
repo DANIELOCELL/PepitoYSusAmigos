@@ -24,4 +24,14 @@ public class Combatents {
         }
         return personatges;
     }
+
+    public int equipsAmbVius() {
+        int equipsVius = 0;
+        for (Equip e : equips) {
+            if (e.personatgesVius() > 0) {
+                equipsVius++;
+            }
+        }
+        return equipsVius;
+    }
 }
