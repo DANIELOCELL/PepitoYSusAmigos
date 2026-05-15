@@ -26,6 +26,7 @@ public abstract class Personatge {
         UI.mostrarFerAtac(this, oponent, mal);
         if (estaViu) {
             oponent.rebreMal(mal);
+            malFet = malFet + mal;
         }
     }
 
