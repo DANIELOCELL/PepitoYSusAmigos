@@ -1,6 +1,6 @@
 public class Guerrer extends Personatge {
-    public Guerrer(String nom) {
-        super(nom);
+    public Guerrer(String nom, Equip equip) {
+        super(nom, equip);
     }
 
     @Override

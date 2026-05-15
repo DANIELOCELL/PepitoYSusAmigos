@@ -4,8 +4,8 @@ public class Arquer extends Personatge {
     private int fletxes;
     private int rondesPendentsPerFabricar;
 
-    public Arquer(String nom) {
-        super(nom);
+    public Arquer(String nom, Equip equip) {
+        super(nom, equip);
         fletxes = FLETXES_INICIALS;
         rondesPendentsPerFabricar = 0;
     }

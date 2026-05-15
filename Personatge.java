@@ -6,12 +6,14 @@ public abstract class Personatge {
     private boolean estaViu;
     private int vidaActual;
     private int malFet;
+    private Equip equip;
 
-    public Personatge(String nom) {
+    public Personatge(String nom, Equip equip) {
         this.nom = nom;
         estaViu = true;
         vidaActual = VIDA_INICIAL;
         malFet = 0;
+        this.equip = equip;
     }
 
     public void torn(Combatents combatents) {
@@ -63,5 +65,9 @@ public abstract class Personatge {
 
     public String getNom() {
         return nom;
+    }
+
+    public Equip getEquip() {
+        return equip;
     }
 }
