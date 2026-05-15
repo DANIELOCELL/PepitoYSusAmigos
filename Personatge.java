@@ -56,7 +56,7 @@ public abstract class Personatge {
 
     public String getVidaOMort() {
         if (estaViu) {
-            return Integer.toString(vidaActual);
+            return "vida " + Integer.toString(vidaActual);
         }
         else {
             return("mort");

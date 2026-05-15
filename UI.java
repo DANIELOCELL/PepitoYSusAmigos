@@ -15,7 +15,7 @@ public class UI {
     public static void mostrarPersonatgesIVida(ArrayList<Personatge> personatges) {
         int i = 0;
         for (Personatge p : personatges) {
-            System.out.println((i+1) + ". [" + p.getEquip().getNom() + "] " + p.getNom() + " (vida "+p.getVidaOMort()+")");
+            System.out.println((i+1) + ". [" + p.getEquip().getNom() + "] " + p.getNom() + " ("+p.getVidaOMort()+")");
             i++;
         }
     }
