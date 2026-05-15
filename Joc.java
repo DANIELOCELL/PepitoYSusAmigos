@@ -4,13 +4,9 @@ public class Joc {
     public void executar() {
         combatents = new Combatents();
         crearEquips();
-        if (hiHanEquipsVius()) {
+        if (combatents.equipsAmbVius() > 1) {
             combatents.torn();
         }
-    }
-
-    public boolean hiHanEquipsVius() {
-        return combatents.equipsAmbVius() > 0;
     }
 
     public void crearEquips() {
