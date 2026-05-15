@@ -10,8 +10,8 @@ public class Joc {
     }
 
     public void crearEquips() {
-        combatents.afegir(new EquipArquers("Equip arquers"));
-        combatents.afegir(new EquipArquerIGuerrer("Equip mixt"));
-        combatents.afegir(new EquipGuerrers("Equip guerrers"));
+        combatents.afegir(new EquipArquers("Arquers"));
+        combatents.afegir(new EquipArquerIGuerrer("Mixt"));
+        combatents.afegir(new EquipGuerrers("Guerrers"));
     }
 }

@@ -30,4 +30,8 @@ public abstract class Equip {
         }
         return vius;
     }
+
+    public String getNom() {
+        return nom;
+    }
 }
