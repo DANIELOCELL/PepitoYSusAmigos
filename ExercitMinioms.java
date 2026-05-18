@@ -16,7 +16,7 @@ public class ExercitMinioms extends Personatge {
     }
 
     @Override
-    public void atacar(Personatge oponent) {
+    public void ferAccio(Personatge oponent) {
         atacarAmbMal(oponent, Dau.tirar(10) <= 3 ? minioms : minioms / 2);
     }
 }
