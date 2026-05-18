@@ -9,7 +9,7 @@ public class MissDanger extends Personatge {
     }
 
     @Override
-    public void atacar(Personatge oponent) {
+    public void ferAccio(Personatge oponent) {
         if (esViu()) {
             atacarAmbMal(oponent, mal);
         }
