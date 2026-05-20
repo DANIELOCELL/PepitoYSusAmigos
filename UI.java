@@ -13,6 +13,28 @@ public class UI {
         return personatges.get(escollit-1);
     }
 
+    public static int escollirAccioCurandero(String nomCurandero) {
+        System.out.println(nomCurandero + ", escull la teva acció:");
+        System.out.println("1. Curar un company");
+        System.out.println("2. Atacar un enemic");
+        return entrada.nextInt();
+    }
+
+    public static Personatge escollirCompanyACurar(ArrayList<Personatge> companys) {
+        System.out.println("Escull quin company vols curar:");
+        for (int i = 0; i < companys.size(); i++) {
+            Personatge p = companys.get(i);
+            System.out.println((i + 1) + ". " + p.getNom() + " (" + p.getVidaOMort() + ")");
+        }
+        int escollit = entrada.nextInt();
+        return companys.get(escollit - 1);
+    }
+
+    public static void mostrarCuracio(Personatge curandero, Personatge curat, int quantitat) {
+        System.out.println(curandero.getNom() + " cura a " + curat.getNom()
+                + " i li restaura " + quantitat + " punts de vida.");
+    }
+
     public static void mostrarPersonatgesIVida(ArrayList<Personatge> personatges) {
         int i = 0;
         for (Personatge p : personatges) {

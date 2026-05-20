@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Curandero extends Personatge {
 
     private static final int CURACIO_COMPANY = 20;
@@ -9,27 +11,38 @@ public class Curandero extends Personatge {
     }
 
     @Override
-    public void ferAccio(Personatge oponent) {
-        int tirada = Dau.tirar(10);
-        if (tirada <= 4) {
-            curarCompany();
-        } else if (tirada <= 6) {
-            curarSeMate();
-        } else {
-            atacarAmbMal(oponent, DANY_ATAC);
-        }
-    }
+    public void torn(Combatents combatents) {
+        System.out.println();
+        System.out.println("És el torn de " + getNom() + " (Curandero)");
+        UI.mostrarPersonatgesIVida(combatents.obtenirPersonatges());
 
-    private void curarCompany() {
-        for (Personatge p : getEquip().getPersonatges()) {
-            if (p.esViu() && p != this) {
-                p.rebreMal(-CURACIO_COMPANY);
-                return;
+        int accio = UI.escollirAccioCurandero(getNom());
+
+        if (accio == 1) {
+            ArrayList<Personatge> companysVius = new ArrayList<>();
+            for (Personatge p : getEquip().getPersonatges()) {
+                if (p.esViu() && p != this) {
+                    companysVius.add(p);
+                }
             }
+
+            if (companysVius.isEmpty()) {
+                UI.mostrarCuracio(this, this, CURACIO_PROPIA);
+                this.curar(CURACIO_PROPIA);
+            } else {
+                Personatge company = UI.escollirCompanyACurar(companysVius);
+                UI.mostrarCuracio(this, company, CURACIO_COMPANY);
+                company.curar(CURACIO_COMPANY);
+            }
+
+        } else {
+            Personatge oponent = UI.escollirOponent(this, combatents.obtenirPersonatges());
+            ferAccio(oponent);
         }
     }
 
-    private void curarSeMate() {
-        this.rebreMal(-CURACIO_PROPIA);
+    @Override
+    public void ferAccio(Personatge oponent) {
+        atacarAmbMal(oponent, DANY_ATAC);
     }
 }

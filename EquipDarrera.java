@@ -3,6 +3,6 @@ public class EquipDarrera extends Equip {
         super(nom);
         afegirPersonatge(new Morthex("Gerald", this));
         afegirPersonatge(new PokoMoko("Eloi", this));
-        afegirPersonatge(new Arquer("Joan", this));
+        afegirPersonatge(new Curandero("Lucia", this));
     }
 }

@@ -42,6 +42,12 @@ public abstract class Personatge {
         }
     }
 
+    public void curar(int quantitat) {
+        if (estaViu) {
+            vidaActual = Math.min(vidaActual + quantitat, VIDA_INICIAL);
+        }
+    }
+
     public boolean esViu() {
         return estaViu;
     }
